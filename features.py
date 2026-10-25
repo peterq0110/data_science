@@ -45,7 +45,7 @@ def basic_features(df):
     # Title length
     features["title_length"] = df["Title"].str.len()
 
-    # Two features that need a loop: number of words, and "has a digit?"
+    # A loop for two features
     title_words = []
     title_has_digit = []
     for title in df["Title"]:
@@ -79,8 +79,7 @@ def image_features(path):
     # Go through the colours one by one: 0 = red, 1 = green, 2 = blue
     for i in range(3):
         color = COLOURS[i]
-        channel = pixels[:, :, i] #All rows, all columns, colour i           # only this colour of all pixels
-
+        channel = pixels[:, :, i] #All rows, all columns, colour i           
         # How much of this colour the cover has on average
         features["mean_" + color] = channel.mean()
 

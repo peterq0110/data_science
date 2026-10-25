@@ -45,8 +45,6 @@ def load_data(path):
 
 #Print basic facts
 def basic_info(df):
-    
-
     # Number of rows and columns
     print("\n Shape (rows, columns)")
     print(df.shape)
@@ -73,8 +71,6 @@ def basic_info(df):
 
 #Compare Price, Rating, Title Length
 def summary_by_category(df):
-    
-
     for category in CATEGORIES:
         # Keep only the rows of this category
         subset = df[df["Category"] == category]
@@ -110,7 +106,7 @@ def common_words(df, n=10):
 
 def plot_overview(df):
     #Figure 1: three small plots next to each other.
-    #(1) books per category, (2) price per category, (3) rating per category."""
+    #(1) books per category, (2) price per category, (3) rating per category.
 
     # Split the data once, so we can reuse it in the plots
     fiction = df[df["Category"] == "Fiction"]
@@ -150,7 +146,7 @@ def plot_overview(df):
 
 def plot_samples(df, n=6):
     #Figure 2: n random book covers from each category in a grid,
-    #so we can compare them with our own eyes."""
+    #so we can compare them with our own eyes.
 
     # One row per category, one column per book
     fig, axes = plt.subplots(len(CATEGORIES), n, figsize=(2 * n, 3 * len(CATEGORIES)))
